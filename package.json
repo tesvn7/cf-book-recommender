@@ -20,6 +20,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "csv-loader": "^3.0.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "postcss": "^8",
