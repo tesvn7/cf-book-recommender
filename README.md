@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Book Recommendation Frontend |  🌍 [Live](https://cf-book-recommender.vercel.app/)
 
-## Getting Started
+This is the frontend React app for the book recommendation system. It interacts with the backend recommendation API developed in FastAPI [Project-link](https://github.com/tesvn7/cf-br-backend). 
 
-First, run the development server:
+## Overview
+
+The app allows users to:
+
+- View a list of popular books across genres
+- Search for a book title and get personalized recommendations
+
+## Screenshot
+
+<img src="https://raw.githubusercontent.com/tesvn7/web-image-hosting/main/br-ss1.png" width="49%" /> <img src="https://raw.githubusercontent.com/tesvn7/web-image-hosting/main/br-ss2.png" width="49%" /> 
+
+## Features
+
+- **Search bar**: User can enter a book title to get recommendations. Search is case sensitive.
+
+- **Popular books view**: Fetches top 50 most popular books from the backend `/popular` endpoint.
+
+- **Recommendations view**: Fetches top 10 recommendations for the searched book from the `/recommend` endpoint.
+
+- **Loading skeleton**: Shows a placeholder loading state while fetching data.
+
+- **Error handling**: Gracefully handles errors from the API.
+
+## Frontend Tech Stack
+
+- [Next.js](https://nextjs.org/) for server-side rendering and React framework.
+- [Tailwind CSS](https://tailwindcss.com/) for styling.
+- [React Query](https://react-query.tanstack.com/) for fetching data and managing cache.
+- [Axios](https://github.com/axios/axios) for API calls.
+
+## Usage
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run locally
+```bash
+npm run dev
+```
+### Build and deploy
+```bash
+npm run build
+npm run start
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deployment
+This application is deployed on Vercel. The deployment process is automated, triggered by a GitHub push to the main branch. Vercel provides seamless deployment and hosting for Next.js applications.
 
-## Learn More
+## Backend API
+The frontend interacts with the backend FastAPI recommendation API. See backend-readme.md for details on the endpoints and underlying recommendation system.
 
-To learn more about Next.js, take a look at the following resources:
+### Key points:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Uses collaborative filtering with book rating data
+- Preprocesses data into pickle files for performance
+- `/popular` and `/recommend `endpoints
+- Deployed on AWS Lambda with Mangum
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
