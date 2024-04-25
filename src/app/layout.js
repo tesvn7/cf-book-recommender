@@ -1,4 +1,6 @@
 import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
+
 
 import "./globals.css";
 
@@ -14,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
